@@ -1,0 +1,13 @@
+*sublime*
+__pycache__
+*.pyc
+node_modules
+pipcache
+.idea
+.settings
+.cache
+.mypy_cache
+.vim
+.venv
+.DS_Store
+.aws-sam
