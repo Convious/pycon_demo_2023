@@ -28,7 +28,7 @@ def lambda_handler(event: dict, context) -> dict:
         Return doc: https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html
     """
 
-    sleep_time = randint(10, 1000)
+    sleep_time = randint(100, 1000)
 
     print(f"I'm about to sleep for {sleep_time} ms")
 
