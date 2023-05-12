@@ -89,6 +89,14 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'sqlite.db',
+    }
+}
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 

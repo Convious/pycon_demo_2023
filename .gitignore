@@ -11,3 +11,4 @@ pipcache
 .venv
 .DS_Store
 .aws-sam
+app/sqlite.db
