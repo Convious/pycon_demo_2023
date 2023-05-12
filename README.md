@@ -15,3 +15,16 @@ pipenv shell
 cd app
 DJANGO_SETTINGS_MODULE=app.settings pytest
 ```
+
+## Run app under gunicorn
+
+```
+pipenv shell
+cd app
+
+# sync workers
+gunicorn -c gunicorn_sync.conf.py app.wsgi:application
+
+# gevent workers
+gunicorn -c gunicorn_gevent.conf.py app.wsgi:application
+```
