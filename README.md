@@ -12,5 +12,6 @@ pipenv install --python 3.10
 
 ```
 pipenv shell
+cd app
 DJANGO_SETTINGS_MODULE=app.settings pytest
 ```
