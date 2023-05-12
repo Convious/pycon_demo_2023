@@ -5,11 +5,17 @@ from django.conf import settings
 
 if TYPE_CHECKING:
     from django.test import Client
+    from pytest_mock import MockFixture
 
 
-def test_cpu_bound_endpoint(client: "Client") -> None:
+def test_cpu_bound_endpoint(client: "Client", mocker: "MockFixture") -> None:
+    mocker.patch("app.views.randint", return_value=4)
     response = client.get('/api/cpu-bound/')
     assert response.status_code == 200
+    assert response.json() == {
+        "input": 4,
+        "result": 10,
+    }
 
 
 @responses.activate
