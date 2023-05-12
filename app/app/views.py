@@ -1,6 +1,7 @@
 from random import randint
 from typing import TYPE_CHECKING
 
+import requests
 from django.http import JsonResponse
 
 from app.services import slow_sum, call_random_sleeper
@@ -19,7 +20,12 @@ def cpu_bound(request: "Request") -> JsonResponse:
 
 
 def io_bound(request: "Request") -> JsonResponse:
-    result = call_random_sleeper()
-    return JsonResponse({
-        "result": result,
-    })
+    try:
+        result = call_random_sleeper()
+        return JsonResponse({
+            "result": result,
+        })
+    except requests.exceptions.HTTPError:
+        return JsonResponse({
+            "error": "Failed to call random sleeper",
+        }, status=500)
