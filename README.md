@@ -37,3 +37,20 @@ GUNICORN_WORKERS=num_of_workers gunicorn -c gunicorn_gevent.conf.py app.wsgi:app
 cd benchmark
 locust -H http://localhost:8000 -u 200 -r 10 CPUUser
 ```
+
+
+## Interesting repos
+
+[uvloop](https://github.com/MagicStack/uvloop)
+[pyuv](https://github.com/saghul/pyuv)
+[gevent](https://github.com/gevent/gevent)
+[greenlet](https://github.com/python-greenlet/greenlet)
+[libuv](https://github.com/libuv/libuv)
+[django-db-geventpool](https://github.com/jneight/django-db-geventpool)
+
+## Useful links
+
+[uvloop design](http://docs.libuv.org/en/v1.x/design.html)
+[GIL](https://wiki.python.org/moin/GlobalInterpreterLock)
+[stackless wiki](https://github.com/stackless-dev/stackless/wiki/)
+[gunicorn workers choice guide](https://luis-sena.medium.com/gunicorn-worker-types-youre-probably-using-them-wrong-381239e13594)
