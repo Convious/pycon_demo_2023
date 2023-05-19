@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sam build --debug --cached --use-container --parallel
+sam build --debug --cached --use-container --cached
 
 if [ "$?" -eq "0" ]
 then

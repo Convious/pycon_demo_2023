@@ -7,7 +7,8 @@ name = "pypi"
 django = "==4.2.1"
 requests = "==2.30.0"
 gunicorn = "==20.1.0"
-gevent = "*"
+gevent = "==22.10.2"
+locust = "*"
 
 [dev-packages]
 black = "==23.3.0"
